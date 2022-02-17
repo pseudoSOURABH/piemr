@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+:root {
+  --background: grey;
+  --text: black;
+
+  --Navbar: black;
+  --Navbartext: whitesmoke;
+ 
+
+  --lihover:darkgrey;
+  --liactive:rgb(128, 119, 119);
+  --libg:grey;
+ 
+  
+}
+[data-theme='dark'] {
+  --background: black;
+  --text: whitesmoke;
+
+ 
+  --Navbar: rgb(0, 255, 170);
+  --Navbartext: black;
+
+  --libg:rgb(198, 255, 237);
+  --lihover:rgb(21, 174, 21);
+  --liactive:rgb(10, 95, 31);
+}

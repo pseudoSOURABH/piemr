@@ -1,0 +1,29 @@
+.Navbar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-around;
+
+  background-color: var(--Navbar);
+  color: var(--Navbartext);
+
+  padding: 7px;
+  
+}
+
+.Navbar ul li {
+  /* border: 1px solid black; */
+  /* background-color: var(--libg); */
+  text-align: center;
+  /* padding: .2px 5px; */
+  font-size: larger;
+  
+}
+.Navbar ul li:hover {
+  color: var(--lihover);
+  
+}
+.Navbar li.active {
+  color: var(--liactive);
+}
