@@ -1,12 +1,18 @@
 import "./App.css";
-import { Navbar } from "./Navbar/Navbar";
-import ToggleSwitch from "./ToggleSwitch/ToggleSwitch";
+import { Navbar } from "./Components/NavComponent/Navbar/Navbar";
+import ToggleSwitch from "./Components/NavComponent/ToggleSwitch/ToggleSwitch";
 // import useLocalStorage from "use-local-storage";
 // import { getWindow, getDocument } from "ssr-window";
 import { useState } from "react";
-import { BouncingBalls } from "./BouncingBalls/BouncingBalls";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Footer } from "./Footer/Footer";
+import { Footer } from "./Components/Footer/Footer";
+import { FAQ } from "./Components/NavbarComponent/FAQ/FAQ.js";
+
+import {Home} from './Components/NavbarComponent/Home/Home';
+import { Header } from "./Components/NavComponent/Header/Header";
+import { Learnings } from "./Components/NavbarComponent/Learnings/Learnings";
+import { News } from "./Components/NavbarComponent/News/News.js";
 
 function App() {
   // const window = getWindow();
@@ -27,6 +33,7 @@ function App() {
     <>
       {" "}
       <Router>
+        <Header/>
         <div className="App" data-theme={theme}>
           <Navbar>
             <ToggleSwitch
@@ -35,16 +42,19 @@ function App() {
               isOn={theme}
             />
           </Navbar>
-          <BouncingBalls />
+          
+          {/* <BouncingBalls /> */}
 
           <div className="RoutingElement">
             <Routes>
-              <Route exact path="/" element={<Footer />} />
-              <Route exact path="/Find-Friends" element={<Footer />} />
-              <Route exact path="/About" element={<Footer />} />
-              <Route exact path="/Contact-Us" element={<Footer />} />
+              <Route exact path="/" element={<Home/>} />
+              <Route exact path="/learnings" element={<Learnings/>} />
+             
+              <Route exact path="/News" element={<News/>} />
+              <Route exact path="/FAQ" element={<FAQ/>} />
             </Routes>
           </div>
+          <Footer/>
         </div>
       </Router>
     </>

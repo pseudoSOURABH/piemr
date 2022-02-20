@@ -12,7 +12,7 @@ code {
     monospace;
 }
 :root {
-  --background: grey;
+  --background: white;
   --text: black;
 
   --Navbar: black;

@@ -1,0 +1,51 @@
+.Header {
+  background-color: var(--background);
+  display: block;
+}
+.Header img {
+  display: inline;
+}
+/* .credentialsbutton{
+
+} */
+h1{
+  text-align: center;
+}
+.piemrlogo {
+  float: left;
+  width: 150px;
+  height: 100px;
+  margin-left: 1.3em;
+}
+.credentialsbutton {
+  float: right;
+  list-style: none;
+  margin-top: .4em;
+  margin-right: 1em;
+}
+.credentialsbutton li {
+  padding: 0rem 0.3rem;
+  display: inline;
+
+  /* border: 1px solid var(--background);
+   border-radius: 1rem; */
+}
+
+.logoutbutton {
+  background-color: red;
+  text-decoration: none;
+  color: white;
+  padding: 0.6rem 0.9rem;
+}
+.signupbutton {
+  background-color: cornflowerblue;
+  text-decoration: none;
+  color: white;
+  padding: 0.6rem 0.9rem;
+}
+.loginbutton {
+  background-color: green;
+  text-decoration: none;
+  color: white;
+  padding: 0.6rem 0.9rem;
+}

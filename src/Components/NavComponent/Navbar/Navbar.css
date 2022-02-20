@@ -1,6 +1,7 @@
 .Navbar ul {
   list-style: none;
   display: flex;
+
   flex-direction: row;
 
   justify-content: space-around;
@@ -8,21 +9,24 @@
   background-color: var(--Navbar);
   color: var(--Navbartext);
 
-  padding: 7px;
-  
+  /* padding: 7px; */
+}
+
+.Navbar {
+  display: table;
+  width: 100%;
 }
 
 .Navbar ul li {
   /* border: 1px solid black; */
   /* background-color: var(--libg); */
   text-align: center;
-  /* padding: .2px 5px; */
+  padding: 1em 0em;
   font-size: larger;
-  
+  text-decoration: none;
 }
 .Navbar ul li:hover {
   color: var(--lihover);
-  
 }
 .Navbar li.active {
   color: var(--liactive);
