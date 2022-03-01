@@ -1,7 +1,7 @@
 import React from 'react';
 import { Newsitem } from './Newsitem';
 import {Spinner} from './Spinner';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -24,7 +24,7 @@ export const News = (props) => {
 
     let url = `https://newsapi.org/v2/top-headlines?country=${
       props.country
-    }&category=${this.props.category}&apiKey=f512c567cfe342c1b6471700ea865ffd&page=${
+    }&category=${props.category}&apiKey=f512c567cfe342c1b6471700ea865ffd&page=${
      state.page - 1
     }&pageSize=${props.pageSize}`;
     setstate({ loading: true });
@@ -47,7 +47,7 @@ export const News = (props) => {
       }&category=${props.category}&apiKey=f512c567cfe342c1b6471700ea865ffd&page=${
         state.page + 1
       }&pageSize=${props.pageSize}`;
-      this.setState({ loading: true });
+      setstate({ loading: true });
       let data = await fetch(url);
       let parsedData = await data.json();
 
@@ -61,22 +61,78 @@ export const News = (props) => {
   };
 
   
-   const componentDidMount=async() =>{
-    //anything inside this function executes atlast.
-
-    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=f512c567cfe342c1b6471700ea865ffd&page=1&pageSize=${props.pageSize}`;
-    this.setState({ loading: true });
-    let data = await fetch(url);
-    let parsedData = await data.json();
-    this.setState({
-      articles: parsedData.articles,
-      TotalArticles: parsedData.totalResults,
-      loading: false,
-    });
-  }
+   useEffect(() => {
+     
+    const fetchData=async() =>{
+      let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=f512c567cfe342c1b6471700ea865ffd&page=1&pageSize=${props.pageSize}`
+      setstate({ loading: true });
+      let data = await fetch(url);
+      let parsedData = await data.json();
+      setstate({
+        articles: parsedData.articles,
+        
+        TotalArticles: parsedData.totalResults,
+        loading: false,
+      });
+    }
+    fetchData().catch(console.error);
+    
+   },[1000])
+   
   return (
     <div>
-        
+        <div className="container my-3 ">
+        <h2
+          className="text-center my-4"
+          style={{ border: "2px solid black", padding: "8px", margin: "3px" }}
+        >
+          <b>SPREAD-NEWS: Top Headlines</b>
+        </h2>
+        <div style={{ top: "100px" }}>{state.loading && <Spinner />}</div>
+
+        <div className="row">
+          {!state.loading &&
+            state.articles.map((element) => {
+              return (
+                <div
+                  className="col-md-4 my-3"
+                  style={{ height: "500px" }}
+                  key={element.url}
+                >
+                  <Newsitem
+                    //   key={element.url}
+                    title={element ? element.title : ""}
+                    description={element ? element.description : ""}
+                    imageurl={element.urlToImage}
+                    newsurl={element.url}
+                  />
+                </div>
+              );
+            })}
+
+        </div>
+        <div className=" container d-flex justify-content-between">
+          <button
+            disabled={state.page <= 1}
+            type="button"
+            className="btn btn-dark"
+            onClick={HandlePrevClick}
+          >
+            &laquo; Prev
+          </button>
+          <button
+            disabled={
+              state.page + 1 >
+              Math.ceil(state.TotalArticles / props.pageSize)
+            }
+            type="button"
+            className="btn btn-dark"
+            onClick={HandlenextClick}
+          >
+            Next &raquo;
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

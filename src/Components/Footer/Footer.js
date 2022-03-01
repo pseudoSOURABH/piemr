@@ -3,6 +3,6 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <div>this is a Footer.</div>
+    <div className='footer'>this is a Footer.</div>
   )
 }
