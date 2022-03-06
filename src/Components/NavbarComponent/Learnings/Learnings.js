@@ -2,30 +2,36 @@ import { dblClick } from "@testing-library/user-event/dist/click";
 import React from "react";
 import "./Learnings.css";
 import cpp from "./c++.png";
+import c from './c.png';
+import AI from './AI.png';
+import { Navigate, useNavigate,Router, NavLink,Routes} from "react-router-dom";
 
 
 
 export const Learnings = () => {
- 
+ let Nevigate=useNavigate();
   const ClickOnC=()=>{
     
   }
   return (
-    <div className="learningpage">
+    
+      <div className="learningpage">
       <div className="learncontain">
         <div className="techno" >
           <h2>Programming Languages</h2>
           <div className="grid-container">
-            <div className="grid-item">
-              <img src={cpp} alt="not loaded" />
+            <div className="grid-item" >
+             <NavLink  to="/learnings/C">
+             <img src={cpp} alt="not loaded" />
               <p>c programming</p>
+             </NavLink>
             </div>
-            <div className="grid-item">
-              <img src={cpp} alt="not loaded" />
+            <div className="grid-item" onClick={()=>{console.log('cpp')}}>
+              <img src={c} alt="not loaded" />
               <p>c++</p>
             </div>
             <div className="grid-item">
-              <img src={cpp} alt="not loaded" />
+              <img src={AI} alt="not loaded" />
             </div>
             <div className="grid-item">
               <img src={cpp} alt="not loaded" />
@@ -262,26 +268,6 @@ export const Learnings = () => {
     </div>
     </div>
 
-    // <div className="learncontain">
-    //   <div className="learnings">
-    //     <ul>
-    //       <li>C</li>
-    //       <li>C++</li>
-    //       <li>Java</li>
-    //       <li>.Net</li>
-    //       <li>Python</li>
-    //       <li>Data Structures</li>
-    //       <li>My-Sql</li>
-    //       <li>Machine Learning</li>
-    //       <li>Data Science</li>
-    //       <li>html</li>
-    //       <li>javascript</li>
-    //       <li>React</li>
-    //       <li>Web-Devolopment</li>
-    //       <li>Cloud-computing</li>
-    //     </ul>
-    //     <div className="box">tryna  make an article Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae voluptas ipsum in! Sit similique soluta temporibus quo mollitia itaque cumque inventore, repellat quaerat error impedit modi praesentium voluptates vel? Exercitationem doloremque vero dignissimos sint debitis, temporibus minima fugiat officia voluptatum numquam recusandae dicta, nostrum sapiente corporis consequuntur quo voluptas illo alias accusamus corrupti nesciunt voluptates quisquam sunt cum. Laudantium consectetur iure dolores esse rerum modi beatae nihil? Libero voluptatem fugit pariatur veniam saepe repudiandae consectetur? Porro in inventore minima natus laudantium aspernatur dolorem, impedit quas, eum eius amet, consequatur aliquam! Maiores officia odio vitae ab corrupti, ad nihil recusandae nostrum impedit iste ipsa magnam laudantium facere tenetur id dolore fugit reprehenderit saepe! Quam est eos eaque praesentium provident laudantium non in earum molestiae, exercitationem esse impedit facere aliquam consequatur reiciendis, officiis corrupti sequi! Nostrum nisi eaque fugit provident! Dolorum iusto laborum aliquam numquam natus molestias, perspiciatis delectus odio </div>
-    //   </div>
-    // </div>
+    
   );
 };

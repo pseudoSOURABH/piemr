@@ -13,6 +13,8 @@ import {Home} from './Components/NavbarComponent/Home/Home';
 import { Header } from "./Components/NavComponent/Header/Header";
 import { Learnings } from "./Components/NavbarComponent/Learnings/Learnings";
 import { News } from "./Components/NavbarComponent/News/News.js";
+import { C } from "./Components/NavbarComponent/Learnings/C/C";
+import { C_History } from "./Components/NavbarComponent/Learnings/C/C_History/C_History";
 
 function App() {
   // const window = getWindow();
@@ -52,6 +54,9 @@ function App() {
              
               <Route exact path="/News" element={<News/>} />
               <Route exact path="/FAQ" element={<FAQ/>} />
+              <Route exact path="/learnings/C" element={<C/>} />
+              <Route exact path="/learnings/C/C_History" element={<C_History/>} />
+              
             </Routes>
           </div>
           <Footer/>

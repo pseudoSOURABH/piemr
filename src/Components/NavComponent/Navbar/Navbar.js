@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { NavLink,Link, useLocation, useNavigate } from "react-router-dom";
 // import piemrlogo from '../Images/piemrlogo.jpg';
 
 export const Navbar = (props) => {
@@ -10,17 +10,17 @@ export const Navbar = (props) => {
         <ul className=" Navbarul">
           
           <li>
-            <Link to="/">Home</Link>
+            <NavLink  to="/">Home</NavLink>
           </li>
           
           <li>
-            <Link to="/learnings">Learings</Link>
+            <NavLink  to="/learnings">Learings</NavLink>
           </li>
           <li>
-            <Link to="/News">Tech-Update</Link>
+            <NavLink  to="/News">Tech-Update</NavLink>
           </li>
           <li>
-            <Link to="/FAQ">FAQ'S</Link>
+            <NavLink  to="/FAQ">FAQ'S</NavLink>
           </li>
           {props.children}
         </ul>

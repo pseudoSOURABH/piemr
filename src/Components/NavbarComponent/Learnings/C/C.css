@@ -1,0 +1,30 @@
+ .container1 ul {
+  list-style-type: none;
+  padding: 0;
+  border: 8px solid grey;
+  height: max-content;
+  margin-top: 0%;
+}
+.c-contain{
+    top: 0%;
+}
+.container1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container1 li {
+  background-color: aqua;
+  margin-bottom: 0.3rem;
+  padding:.7em .2em;
+}
+.c-box {
+  -ms-flex: 3;
+  flex: 3;
+  background-color:orangered;
+  padding: 8px;
+  
+}
+.headingofC li{
+    font-weight: 600;
+}
