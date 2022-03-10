@@ -24,7 +24,19 @@
   background-color:orangered;
   padding: 8px;
   
+  
+  
 }
-.headingofC li{
+.content1 div{
+  margin: auto;
+}
+
+.headingofC {
     font-weight: 600;
+   color: orangered;
+}
+.option{
+  cursor: pointer;
+  color: darkgreen;
+  
 }

@@ -12,7 +12,7 @@ export const Header = () => {
         <div className="cred">
           <form className="credentialsbutton">
             <li>
-              <Link className="loginbutton" to="/" role="button">
+              <Link className="loginbutton" to="/login" role="button" >
                 login
               </Link>
             </li>

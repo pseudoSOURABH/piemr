@@ -1,498 +1,752 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Learnings } from "../Learnings";
 import "./C.css";
-import { C_History } from "./C_History/C_History";
+import { useState } from "react";
 
 export const C = () => {
+  const [cstate, setcstate] = useState("features");
+
   return (
     <div>
       <div className="c-contain">
         <div className="container1">
           <ul>
-            <li className="headingofC">Basics Of C</li>
-            <li>
-              <Link to="/Learnings/C/C_History">what is C language</Link>
+            <li className="headingofC">Basics of C</li>
+            <li className="option" onClick={() => setcstate("introduction")}>
+              what is C language.
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">History Of C</Link>
+
+            <li className="option" onClick={() => setcstate("history")}>
+              history of C.
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Features Of C</Link>
+            <li className="option" onClick={() => setcstate("features")}>
+              Features Of C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">How to install C</Link>
+            <li className="option" onClick={() => setcstate("install")}>
+              How to install C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">First C program</Link>
+
+            <li className="option" onClick={() => setcstate("firstCprogram")}>
+              First C program
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Flow of C program</Link>
+
+            <li className="option" onClick={() => setcstate("flowOfC")}>
+              Flow of C program
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">printf scanf</Link>
+            <li className="option" onClick={() => setcstate("printfscanf")}>
+              printf scanf
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Variables in C</Link>
+            <li className="option" onClick={() => setcstate("VariblesInC")}>
+              Variables in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Data types in C</Link>
+            <li className="option" onClick={() => setcstate("Dtype")}>
+              Data types in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Keywords in C</Link>
+            <li className="option" onClick={() => setcstate("keyword")}>
+              Keywords in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Identifiers</Link>
+            <li className="option" onClick={() => setcstate("identifiers")}>
+              Identifiers in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C operators</Link>
+            <li className="option" onClick={() => setcstate("operators")}>
+              Operators in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Comments</Link>
+            <li className="option" onClick={() => setcstate("Comments")}>
+              C Comments
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Escape Sequence</Link>
+            <li className="option" onClick={() => setcstate("escapeseq")}>
+              C Escape Sequence
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Ascii Value in C</Link>
+            <li className="option" onClick={() => setcstate("ascii")}>
+              Ascii Value in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Constants in C</Link>
+            <li className="option" onClick={() => setcstate("constant")}>
+              Constant in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Literals in C</Link>
+            <li className="option" onClick={() => setcstate("literal")}>
+              Literals in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Tokens in C</Link>
+            <li className="option" onClick={() => setcstate("token")}>
+              Tokens in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Boolean</Link>
+            <li className="option" onClick={() => setcstate("boolean")}>
+              C Boolean
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Static in C</Link>
+            <li className="option" onClick={() => setcstate("static")}>
+              Static in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Compile Time vs Run Time</Link>
+            <li className="option" onClick={() => setcstate("comVSrun")}>
+              Compile Time vs Run Time
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Programming erros in C</Link>
+            <li className="option" onClick={() => setcstate("error")}>
+              Programming errors in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Conditional operator in C</Link>
+            <li className="option" onClick={() => setcstate("condi-op")}>
+              Conditional operator in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">bitwise operator in C</Link>
+            <li className="option" onClick={() => setcstate("bitwise")}>
+              bitwise operator in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">2S complement in C</Link>
+            <li className="option" onClick={() => setcstate("2s-com")}>
+              2S component in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Fundamental test</Link>
+            <li className="option" onClick={() => setcstate("funda")}>
+              C Fundamental test
             </li>
 
             <li className="headingofC">C Control Statements </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C if-else</Link>
+            <li className="option" onClick={() => setcstate("ifelse")}>
+              C if-else
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C switch</Link>
+            <li className="option" onClick={() => setcstate("switch")}>
+              C switch
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Loops</Link>
+            <li className="option" onClick={() => setcstate("loops")}>
+              C Loops
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C do-while Loop</Link>
+            <li className="option" onClick={() => setcstate("dowhile")}>
+              C do-while Loop
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C while Loop</Link>
+            <li className="option" onClick={() => setcstate("while")}>
+              C while Loop
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C for Loop</Link>
+            <li className="option" onClick={() => setcstate("for")}>
+              C for Loop
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C break</Link>
+            <li className="option" onClick={() => setcstate("break")}>
+              C break
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C continue</Link>
+            <li className="option" onClick={() => setcstate("continue")}>
+              C continue
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C goto</Link>
+            <li className="option" onClick={() => setcstate("goto")}>
+              C goto
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Type Casting</Link>
+            <li className="option" onClick={() => setcstate("typecast")}>
+              Type Casting
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Control Statement Test</Link>
+            <li className="option" onClick={() => setcstate("ctrlstmnt")}>
+              C Control Statement Test
             </li>
+
             <li className="headingofC">C Functions</li>
-            <li>
-              <Link to="/Learnings/C/C_History">What is function</Link>
+            <li className="option" onClick={() => setcstate("whtfunc")}>
+              What is function
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Call:Value & Reference</Link>
+            <li className="option" onClick={() => setcstate("val&ref")}>
+              Call:Value & Reference
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Recursion in C</Link>
+            <li className="option" onClick={() => setcstate("recur")}>
+              Recurssion
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Storage Classes</Link>
+            <li className="option" onClick={() => setcstate("strgcls")}>
+              Storage Class
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Function Test</Link>
+            <li className="option" onClick={() => setcstate("functst")}>
+              C Function Test
             </li>
+
             <li className="headingofC">C Array</li>
-            <li>
-              <Link to="/Learnings/C/C_History">1-D Array</Link>
+            <li className="option" onClick={() => setcstate("1d")}>
+              1-D Array
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">2-D Array</Link>
+            <li className="option" onClick={() => setcstate("2d")}>
+              2-D Array
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Array to Function</Link>
+            <li className="option" onClick={() => setcstate("arrtofunc")}>
+              Array to Function
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Array Test</Link>
+            <li className="option" onClick={() => setcstate("arrtst")}>
+              C Array Test
             </li>
+
             <li className="headingofC">C Pointers</li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Pointers</Link>
+            <li className="option" onClick={() => setcstate("ptr")}>
+              C Pointers
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Pointer to Pointer</Link>
+            <li className="option" onClick={() => setcstate("ptrtoptr")}>
+              C Pointer to Pointer
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Pointer Arithmetic</Link>
+            <li className="option" onClick={() => setcstate("arthptr")}>
+              C Pointer Arithmatic
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Pointer Test</Link>
+            <li className="option" onClick={() => setcstate("ptrtst")}>
+              C Pointer Test
             </li>
 
             <li className="headingofC">C Dynamic Memory</li>
-            <li>
-              <Link to="/Learnings/C/C_History">Dynamic Memory</Link>
+            <li className="option" onClick={() => setcstate("dmemo")}>
+              Dynamic Memory
             </li>
 
             <li className="headingofC">C Strings</li>
-            <li>
-              <Link to="/Learnings/C/C_History">Strings in C</Link>
+            <li className="option" onClick={() => setcstate("str")}>
+              Strings in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C gets() & puts()</Link>
+            <li className="option" onClick={() => setcstate("getsputs")}>
+              C gets() & puts()
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C String Functions</Link>
+            <li className="option" onClick={() => setcstate("strfun")}>
+              C String Functions
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C strlen()</Link>
+            <li className="option" onClick={() => setcstate("strlen")}>
+              C strlen
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C strcpy()</Link>
+            <li className="option" onClick={() => setcstate("strcpy")}>
+              C strcpy()
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C strcat()</Link>
+            <li className="option" onClick={() => setcstate("strcat")}>
+              C strcat()
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C strcmp()</Link>
+            <li className="option" onClick={() => setcstate("strcmp")}>
+              C strcmp()
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C strrev()</Link>
+            <li className="option" onClick={() => setcstate("strrev")}>
+              C strrev()
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C strlwr()</Link>
+            <li className="option" onClick={() => setcstate("strlwr")}>
+              C strlwr()
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C strupr()</Link>
+            <li className="option" onClick={() => setcstate("strupr")}>
+              C strupr()
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C strstr</Link>
+            <li className="option" onClick={() => setcstate("strstr")}>
+              C strstr()
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C String Test</Link>
+            <li className="option" onClick={() => setcstate("strtst")}>
+              C String Test
             </li>
 
             <li className="headingofC">C Math</li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Math Functions</Link>
+            <li className="option" onClick={() => setcstate("cmath")}>
+              C Math Functions
             </li>
 
             <li className="headingofC">C Structure Union</li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Structure</Link>
+            <li className="option" onClick={() => setcstate("struct")}>
+              C Structure
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Array of structure</Link>
+            <li className="option" onClick={() => setcstate("arrofstruct")}>
+              Array of Structure
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Nested Structure</Link>
+            <li className="option" onClick={() => setcstate("neststruct")}>
+              C Nested Structure
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Union</Link>
+            <li className="option" onClick={() => setcstate("uni")}>
+              Union
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C structure Test</Link>
+            <li className="option" onClick={() => setcstate("structtst")}>
+              C structure Test
             </li>
+
             <li className="headingofC">C File Handeling</li>
-            <li>
-              <Link to="/Learnings/C/C_History">C File Handeling</Link>
+            <li className="option" onClick={() => setcstate("flhndl")}>
+              C File Handleing
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C fprintf() fscanf()</Link>
+            <li className="option" onClick={() => setcstate("fprintffscanf")}>
+              C fprintf() fscanf()
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C fputc() fgetc()</Link>
+            <li className="option" onClick={() => setcstate("fputfget")}>
+              C fputc() fgetc()
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C fputs() fgets()</Link>
+            <li className="option" onClick={() => setcstate("fputsfgets")}>
+              C fputs() fgets()
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C fseek()</Link>
+            <li className="option" onClick={() => setcstate("fseek")}>
+              C fseek()
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C rewind()</Link>
+            <li className="option" onClick={() => setcstate("rewind")}>
+              C rewind()
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C ftell()</Link>
+            <li className="option" onClick={() => setcstate("ftell()")}>
+              C ftell()
             </li>
 
             <li className="headingofC">C Preprocessor</li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Preprocessor</Link>
+            <li className="option" onClick={() => setcstate("prepro")}>
+              C Preprocessor
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Macros</Link>
+            <li className="option" onClick={() => setcstate("C Macros")}>
+              C Macros
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C #include</Link>
+            <li className="option" onClick={() => setcstate("include")}>
+              C #include
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C #define</Link>
+            <li className="option" onClick={() => setcstate("define")}>
+              C #define
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C #undef</Link>
+            <li className="option" onClick={() => setcstate("undef")}>
+              C #undef
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C #ifdef</Link>
+            <li className="option" onClick={() => setcstate("ifdef")}>
+              C #ifdef
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C #ifndef</Link>
+            <li className="option" onClick={() => setcstate("ifndef")}>
+              C #ifndef
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C #if</Link>
+            <li className="option" onClick={() => setcstate("if")}>
+              C #if
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C #else</Link>
+            <li className="option" onClick={() => setcstate("else")}>
+              C #else
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C #error</Link>
+            <li className="option" onClick={() => setcstate("error")}>
+              C #error
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C #pragma</Link>
+            <li className="option" onClick={() => setcstate("pragma")}>
+              C #pragma
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Preprocessor Test</Link>
+            <li className="option" onClick={() => setcstate("preprotst")}>
+              C Preprocessor Test
             </li>
 
             <li className="headingofC">C Command Line</li>
-            <li>
-              <Link to="/Learnings/C/C_History">Command Line Arguments</Link>
+            <li className="option" onClick={() => setcstate("cmdlnarg")}>
+              Command Line Arguments
             </li>
 
             <li className="headingofC">C misc</li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Expressions</Link>
+            <li className="option" onClick={() => setcstate("exp")}>
+           C Expressions
+            </li>
+            <li className="option" onClick={() => setcstate("dseg")}>
+           Data Segments
             </li>
 
-            <li>
-              <li>
-                <Link to="/Learnings/C/C_History">Data Segments</Link>
-              </li>
-              <li>
-                <Link to="/Learnings/C/C_History">flow of C program</Link>
-              </li>
-              <Link to="/Learnings/C/C_History">C Expressions</Link>
+            <li className="option" onClick={() => setcstate("flow")}>
+           flow of C program
+           </li>
+           <li className="option" onClick={() => setcstate("enum")}>
+           Enum in C
+           </li>
+           <li className="option" onClick={() => setcstate("clsoflang")}>
+           Classification of<br></br>
+           Programming Languages
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">enum in C</Link>
+           
+            
+
+            <li className="option" onClick={() => setcstate("getch")}>
+           getch() in C
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">getch() in C</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Typedef vs define in C</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">
-                What is function call in C
-              </Link>
-            </li>
+            <li className="option" onClick={() => setcstate("typvsdef")}>
+           Typedef vs define in C
+           </li>
+           <li className="option" onClick={() => setcstate("funcall")}>
+           What is function call in C
+           </li>
+            
 
             <li className="headingofC">C Programming Test</li>
-            <li>
-              <Link to="/Learnings/C/C_History">C programming Test</Link>
+            <li className="option" onClick={() => setcstate("prgmtst")}>
+           C programming test
             </li>
+           
 
             <li className="headingofC">C Programs</li>
-            <li>
-              <Link to="/Learnings/C/C_History">Top 10+ C Programs</Link>
+            <li className="option" onClick={() => setcstate("tpcprgm")}>
+           Top 10+ C Programs
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Fibnocii Series</Link>
+            <li className="option" onClick={() => setcstate("fbncser")}>
+           Fibonacii Series
+           </li>
+           <li className="option" onClick={() => setcstate("prnmbr")}>
+           Prime Number
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Prime Number</Link>
+            <li className="option" onClick={() => setcstate("plndrmnmbr")}>
+           Palindrome Number
+           </li>
+           <li className="option" onClick={() => setcstate("fct")}>
+           Factorial
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Palindrome Number</Link>
+            <li className="option" onClick={() => setcstate("armstrgnmbr")}>
+           Armstrong Number
+           </li>
+           <li className="option" onClick={() => setcstate("smofdgt")}>
+           Sum Of digits
+           </li>
+           <li className="option" onClick={() => setcstate("rvrsnmbr")}>
+           Reverse a Number
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Factorial</Link>
+            <li className="option" onClick={() => setcstate("")}>
+           Swap a Number
             </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Armstrong Numbers</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Sum of digits</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Reverse Number</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Swap Number</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Print 'Hello' without ;</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Assemnly Code in C</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Protram without main</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Matrix Multiplication</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Decimal to Binary</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Number in Characters</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Alphabet Triangle</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Number Triangle</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Fibanocii Triangle</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Hexadecimal to Binary</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Hexadecimal to Decimal</Link>
-            </li>
+            <li className="option" onClick={() => setcstate("Print 'Helo' without ;")}>
+           
+           </li>
+           <li className="option" onClick={() => setcstate("assmbcdinC")}>
+           Assembly Code in C
+           </li>
+           <li className="option" onClick={() => setcstate("cprgmwthmn")}>
+          C Program without main
+           </li>
+           <li className="option" onClick={() => setcstate("mtrxmlt")}>
+           Matrix Multiplication
+           </li>
+           <li className="option" onClick={() => setcstate("dcmltbnr")}>
+           Decimal to Binary
+           </li>
+           <li className="option" onClick={() => setcstate("nmbrinchr")}>
+           Number in Characters
+           </li>
+           <li className="option" onClick={() => setcstate("alphtrng")}>
+           Alphabet Triangle
+           </li>
+           <li className="option" onClick={() => setcstate("nmbrtrn")}>
+           Number Triangle
+           </li>
+           <li className="option" onClick={() => setcstate("finctrn")}>
+           Fibonacii Trinagle
+           </li>
+           <li className="option" onClick={() => setcstate("hexdcmltbnr")}>
+           Hexadecimal to Binary
+           </li>
+           <li className="option" onClick={() => setcstate("hexdcmltdc")}>
+           Hexadecimal to Decimal
+           </li>
+           <li className="option" onClick={() => setcstate("octhex")}>
+           Octal to Hexadecimal
+           </li>
 
-            <li>
-              <Link to="/Learnings/C/C_History">Octal to Hexadecimal in C</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Strong Number in C</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Star Program in C</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">itoa Function in C </Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Extra Long Factorials in C</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Leap Year in C</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Perfect Number program in C</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Variables vs Constants</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Round Robin Program in C </Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Roots of Quadratic Equation</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Expressions</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Expressions</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Expressions</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Expressions</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Expressions</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Expressions</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Expressions</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Expressions</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Expressions</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Expressions</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Expressions</Link>
-            </li>
+           <li className="option" onClick={() => setcstate("Strnmbr")}>
+           Strong No. in C
+           </li>
+           <li className="option" onClick={() => setcstate("strprgm")}>
+           Star Program in C
+           </li>
+           <li className="option" onClick={() => setcstate("itoafunc")}>
+           itoa Function in C
+           </li>
+           <li className="option" onClick={() => setcstate("extrlngfct")}>
+           Extra Long Factorials 
+           </li>
+           <li className="option" onClick={() => setcstate("lpyr")}>
+           Leap Year
+           </li>
+           <li className="option" onClick={() => setcstate("prfctnmbr")}>
+           Perfect No. 
+           </li>
+           <li className="option" onClick={() => setcstate("vrvsconst")}>
+           Variable vs Constant
+           </li>
+           <li className="option" onClick={() => setcstate("rndrbnprgm")}>
+           Round Robin program
+           </li>
+           <li className="option" onClick={() => setcstate("rtsqdreq")}>
+           Roots of Quadratic Equation
+           </li>
+           <li className="option" onClick={() => setcstate("tpcstvstpcnv")}>
+           Type Casting vs Type Conversion
+           </li>
+           <li className="option" onClick={() => setcstate("mdlsop")}>
+           Modulus Operator in C
+           </li>
+           <li className="option" onClick={() => setcstate("smfrstnmbr")}>
+           Sum of first N numbers
+           </li>
+           <li className="option" onClick={() => setcstate("bgontion")}>
+           Big O notation 
+           </li>
+           <li className="option" onClick={() => setcstate("lcmtwonmbr")}>
+           LCM of two numbers
+           </li>
+           <li className="option" onClick={() => setcstate("whvsdowlloop")}>
+           while Loop vs do-while Loop
+           </li>
+           <li className="option" onClick={() => setcstate("bnrtdcml")}>
+           Binary to Decimal number
+           </li>
+           <li className="option" onClick={() => setcstate("gcdtwnmbr")}>
+           GCD of two numbers
+           </li>
+           <li className="option" onClick={() => setcstate("gtchr")}>
+           Getchar() in C
+           </li>
+           <li className="option" onClick={() => setcstate("flwchrt")}>
+           Flowchart in C
+           </li>
+           <li className="option" onClick={() => setcstate("prmdptrns")}>
+           Pyramid Patterns in C
+           </li>
+           <li className="option" onClick={() => setcstate("rndmfunc")}>
+           Random function in C
+           </li>
+           <li className="option" onClick={() => setcstate("fldtrng")}>
+           Floyd Triangle in C
+           </li>
+           <li className="option" onClick={() => setcstate("hdrfls")}>
+           C Header Files
+           </li>
+           <li className="option" onClick={() => setcstate("absfunc")}>
+           abs() function in C
+           </li>
+           <li className="option" onClick={() => setcstate("atmfunc")}>
+           Atom function in C
+           </li>
+           <li className="option" onClick={() => setcstate("structptr")}>
+           Structure pointer in C
+           </li>
+           <li className="option" onClick={() => setcstate("sprintf")}>
+           sprintf() in C
+           </li>
+           <li className="option" onClick={() => setcstate("rngint")}>
+           Range of int in C
+           </li>
+           <li className="option" onClick={() => setcstate("timefrmt")}>
+           24 hour-12 hour time
+           </li>
+           <li className="option" onClick={() => setcstate("dbl")}>
+           double in C
+           </li>
+           <li className="option" onClick={() => setcstate("main")}>
+           main in C
+           </li>
+           <li className="option" onClick={() => setcstate("clcltr")}>
+           Calculator pragram 
+           </li>
+           <li className="option" onClick={() => setcstate("calloc")}>
+           Calloc() in C
+           </li>
+           <li className="option" onClick={() => setcstate("usrdfndvslbrfunc")}>
+           user defined vs library functions
+           </li>
+           <li className="option" onClick={() => setcstate("memset")}>
+           Memset C
+           </li>
+           <li className="option" onClick={() => setcstate("ascci")}>
+           Ascii table in C
+           </li>
+           <li className="option" onClick={() => setcstate("Staticfn")}>
+           Static function in C
+           </li>
+           <li className="option" onClick={() => setcstate("rvrsestr")}>
+           Reverse a string
+           </li>
+           <li className="option" onClick={() => setcstate("twnprmnmbr")}>
+           Twin prime numbers in C
+           </li>
+           <li className="option" onClick={() => setcstate("strchr")}>
+           strchr() function in C
+           </li>
+           <li className="option" onClick={() => setcstate("structofprgm")}>
+           Structure of a program
+           </li>
+           <li className="option" onClick={() => setcstate("pwrfn")}>
+           Power function in C
+           </li>
+           <li className="option" onClick={() => setcstate("malloc")}>
+           Malloc in C
+           </li>
+           <li className="option" onClick={() => setcstate("tblprgm")}>
+           Table Program in C
+           </li>
+           <li className="option" onClick={() => setcstate("cnvuptolw")}>
+           Convert Uppercase to Lowercase
+           </li>
+           <li className="option" onClick={() => setcstate("unrop")}>
+           Unary Operator in C
+           </li>
 
-            <li className="headingofC">Math</li>
-            <li>
-              <Link to="/Learnings/C/C_History">Introduction</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Introduction</Link>
-            </li>
-            <li>
-              <Link to="/Learnings/C/C_History">Introduction</Link>
-            </li>
+           <li className="option" onClick={() => setcstate("arthop")}>
+           Arithmatic Operator in C
+           </li>
+           <li className="option" onClick={() => setcstate("cell")}>
+           Cell function in C
+           </li>
+           <li className="option" onClick={() => setcstate("rltional")}>
+           Relational Operator in C
+           </li>
+           <li className="option" onClick={() => setcstate("assgn")}>
+           Assignment Operator in C
+           </li>
+           <li className="option" onClick={() => setcstate("princr")}>
+           Pre-Increament Operator
+           </li>
+           <li className="option" onClick={() => setcstate("pstincr")}>
+           Post-decreament operator
+           </li>
+           <li className="option" onClick={() => setcstate("opr")}>
+           Operator in C
+           </li>
+           <li className="option" onClick={() => setcstate("ptrvsarr")}>
+           Pointer vs Array
+           </li>
+           <li className="option" onClick={() => setcstate("rstrctkey")}>
+           Restrict Keyword in C
+           </li>
+           <li className="option" onClick={() => setcstate("EXTFN")}>
+           The exit() function in C
+           </li>
+           <li className="option" onClick={() => setcstate("cnstqlfr")}>
+           Const Qualifier
+           </li>
+           <li className="option" onClick={() => setcstate("sqncpnt")}>
+           Sequence Points in C
+           </li>
+           <li className="option" onClick={() => setcstate("angrm")}>
+           Anagram in C
+           </li>
+           <li className="option" onClick={() => setcstate("incrop")}>
+           Increament Operator
+           </li>
+           <li className="option" onClick={() => setcstate("decrop")}>
+           Decreament Operator
+           </li>
+           <li className="option" onClick={() => setcstate("lgclandop")}>
+           Logical AND Operator in C
+           </li>
+           <li className="option" onClick={() => setcstate("shift")}>
+           Shift Operator in C
+           </li>
+           <li className="option" onClick={() => setcstate("nrfrhrptr")}>
+           Near,Far & Huge pointers
+           </li>
+           <li className="option" onClick={() => setcstate("rmvdplct")}>
+           Remove Duplicate elements <br></br>
+           from an array
+           </li>
+           <li className="option" onClick={() => setcstate("gnrclnkdlst")}>
+           Generic Linked List
+           </li>
+           <li className="option" onClick={() => setcstate("isalnum")}>
+           isalnum() function
+           </li>
+           <li className="option" onClick={() => setcstate("isalpha")}>
+           isalpha function
+           </li>
+           <li className="option" onClick={() => setcstate("bsctionmthd")}>
+           Bisection Method
+           </li>
+           <li className="option" onClick={() => setcstate("snpritffn")}>
+           snprintf function
+           </li>
+           <li className="option" onClick={() => setcstate("rmvelefrmarr")}>
+           Remove an element from <b></b>
+            an array
+           </li>
+           <li className="option" onClick={() => setcstate("seqncrt")}>
+           Sequence Root
+           </li>
+           <li className="option" onClick={() => setcstate("isprint")}>
+           isprint() function in C
+           </li>
+           <li className="option" onClick={() => setcstate("isdigit")}>
+           isdigit function in C
+           </li>
+           <li className="option" onClick={() => setcstate("isgraph")}>
+           isgraph() function in C
+           </li>
+           <li className="option" onClick={() => setcstate("lgclntop")}>
+           Logical NOT(!) Operator
+           </li>
+           <li className="option" onClick={() => setcstate("slfrefstruct")}>
+           Self-referential structure
+           </li>
+         
+
+            
 
             <li className="headingofC">C Interview</li>
-            <li>
-              <Link to="/Learnings/C/C_History">C Interview Questions</Link>
-            </li>
+            <li className="option" onClick={() => setcstate("cintrqsn")}>
+           C Interview Queations
+           </li>
           </ul>
+
           <div className="c-box">
-            tryna make an article Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. A recusandae voluptas ipsum in! Sit similique
-            soluta temporibus quo mollitia itaque cumque inventore, repellat
-            quaerat error impedit modi praesentium voluptates vel?
-            Exercitationem doloremque vero dignissimos sint debitis, temporibus
-            minima fugiat officia voluptatum numquam recusandae dicta, nostrum
-            sapiente corporis consequuntur quo voluptas illo alias accusamus
-            corrupti nesciunt voluptates quisquam sunt cum. Laudantium
-            consectetur iure dolores esse rerum modi beatae nihil? Libero
-            voluptatem fugit pariatur veniam saepe repudiandae consectetur?
-            Porro in inventore minima natus laudantium aspernatur dolorem,
-            impedit quas, eum eius amet, consequatur aliquam! Maiores officia
-            odio vitae ab corrupti, ad nihil recusandae nostrum impedit iste
-            ipsa magnam laudantium facere tenetur id dolore fugit reprehenderit
-            saepe! Quam est eos eaque praesentium provident laudantium non in
-            earum molestiae, exercitationem esse impedit facere aliquam
-            consequatur reiciendis, officiis corrupti sequi! Nostrum nisi eaque
-            fugit provident! Dolorum iusto laborum aliquam numquam natus
-            molestias, perspiciatis delectus odio{" "}
+            {cstate === "history" && (
+              <div className="content1">
+                history of c language Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Atque in ipsum perspiciatis architecto
+                debitis, id corporis cumque, odit animi itaque sit velit
+                repellat rem iure doloribus quae natus quasi provident
+                blanditiis dignissimos? Doloribus debitis aut molestiae
+                recusandae eveniet distinctio voluptatibus animi omnis ab
+                officiis, in inventore nemo nisi voluptate explicabo impedit
+                hic! Dolore blanditiis repudiandae vitae commodi dolorem
+                accusamus minima necessitatibus suscipit accusantium libero
+                itaque eligendi nemo odit quisquam repellendus, distinctio
+                assumenda nesciunt aperiam, impedit quas magni rem perferendis
+                tempore cumque? Esse dolorum quod dignissimos facere,
+                distinctio, laboriosam optio molestias ut, ab rerum dolorem odit
+                quibusdam accusamus non. Odit id eligendi perferendis repellat!
+                Veritatis velit nostrum incidunt libero quasi. Odio tempora
+                nesciunt ex amet nulla quidem neque, maiores quasi porro
+                distinctio natus explicabo. Beatae, rem voluptatibus maxime
+                accusamus blanditiis deleniti vitae nulla animi dicta! Dolore
+                iste hic odio, beatae consequatur odit nihil autem perferendis
+                veniam, dolor sint nostrum magni obcaecati quos voluptates dicta
+                nobis numquam! Modi quae quam excepturi repellendus ab nesciunt
+                quis rerum cum iure vel nam sapiente, in eveniet animi! Fugit
+                expedita consequatur fugiat animi, tenetur dolorum laudantium
+                error necessitatibus? Blanditiis quibusdam id libero sit dolores
+                veniam consequatur. Delectus quaerat incidunt animi iste laborum
+                aperiam deserunt, non illum. Quisquam, dolore quasi.
+                Voluptatibus animi beatae quisquam in vitae odio ut repellat,
+                omnis, sunt provident soluta qui esse ex saepe corporis facilis
+                sapiente quo atque molestias laborum. Illo, quis quod
+                repudiandae in molestiae sed aut cupiditate, dolor, recusandae
+                deleniti rem molestias fuga qui! Iste, aliquam iure, ipsam
+                perferendis dicta, incidunt voluptatum veniam unde
+                necessitatibus ducimus laudantium impedit odio quos. Pariatur
+                impedit sed ea, inventore iure voluptatibus, omnis quibusdam
+                dolore odio, veniam corporis iste porro optio eos? Eos, vel
+                necessitatibus officiis, hic, asperiores soluta alias blanditiis
+                quis impedit inventore maxime vero! Quo id voluptate aliquam
+                aspernatur consequatur ipsum esse, temporibus eveniet.
+              </div>
+            )}
+          </div>
+
+          <div className="c-box">
+            {cstate === "introduction" && (
+              <div className="content1">
+                we are having introduction of C language. Lorem ipsum dolor sit,
+                amet consectetur adipisicing elit. Quos vitae dicta similique?
+                Laudantium itaque aspernatur architecto culpa sint quo dolorem.
+                Aliquid, autem. Provident, libero hic, deleniti ea porro
+                quibusdam eligendi eaque ipsum, cum earum saepe quae temporibus
+                sapiente accusamus suscipit soluta ipsa neque recusandae aliquid
+                omnis perferendis! Ullam nostrum quaerat quod modi nam
+                asperiores, minus mollitia aspernatur rem ut vero ab, temporibus
+                voluptate iusto eius reprehenderit, nulla reiciendis ea dolore
+                illum unde tempore explicabo pariatur ipsum? Explicabo quisquam
+                dolor blanditiis expedita quae magnam eos odio asperiores?
+                Consequuntur quidem velit nam distinctio voluptate a, modi
+                maxime, magni recusandae nisi consectetur dolorem accusantium
+                ex, vel ab dolore doloremque cupiditate labore voluptatem
+                veritatis commodi animi amet. Consequatur quam accusamus quaerat
+                voluptatibus nesciunt ducimus iusto similique temporibus beatae
+                odit atque nam, cum, deserunt voluptatum harum necessitatibus
+                reprehenderit quas? Culpa quod veniam alias eum commodi eos ea
+                neque, laudantium voluptatem, animi quaerat praesentium
+                assumenda ipsa dolorem ad voluptas eaque accusantium fuga
+                incidunt perferendis, impedit accusamus illum laborum provident.
+                Cumque quod ab est sequi magni! Dicta rem esse quos
+                reprehenderit dignissimos ullam alias asperiores! Consectetur
+                dolore iusto, quibusdam perspiciatis, ullam exercitationem enim
+                ut cum harum beatae illum accusantium quisquam officiis libero
+                iure veritatis ratione aliquid corporis! Voluptatum quidem,
+                pariatur eius perferendis doloremque repellat voluptatibus minus
+                corrupti accusamus dolorem laudantium rem aperiam modi
+                praesentium dolore ipsam harum qui itaque sit libero id?
+                Recusandae, omnis unde repudiandae temporibus accusantium in
+                explicabo laudantium ullam officia id deleniti ad eum sapiente
+                rerum officiis? Aperiam eos, sit veritatis eaque ipsam
+                inventore, assumenda, illum blanditiis tempore similique
+                accusantium harum nisi nam aliquam tempora! Facilis, recusandae
+                perferendis doloremque enim tenetur natus porro. Sed dignissimos
+                tempora repellendus! Ipsa autem enim fugit harum reiciendis
+                blanditiis, beatae soluta deleniti eum doloremque. At qui nemo
+                hic, tempore quis eum commodi nobis fuga dolorum, deserunt
+                dolore, praesentium quo.
+              </div>
+            )}
+          </div>
+
+          <div className="c-box">
+            {cstate === "features" && (
+              <div className="content1">this is features of C.</div>
+            )}
           </div>
         </div>
       </div>

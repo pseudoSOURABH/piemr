@@ -1,105 +1,113 @@
-import React from 'react';
-import { Newsitem } from './Newsitem';
-import {Spinner} from './Spinner';
-import { useState,useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import NewsItem from "./NewsItem";
+import './News.css';
+import Spinner from "./Spinner";
+import PropTypes from "prop-types";
+
+export class News extends Component {
 
 
-export const News = (props) => {
-  const defaultProps = {
+  static defaultProps = {
     country: 'in',
+    // pageSize:9,
     category:"general",
+   
+
   }
 
-  const  propTypes ={
+  static propTypes ={
     country:PropTypes.string,
     pageSize:PropTypes.number,
     category:PropTypes.string,
+    
+  }
+  // let {pageSize}=this.props;
+  constructor() {
+    super();
+    // console.log("constructor of news-headline");
+    this.state = {
+      articles: [],
+      loading: false,
+      page: 1,
+    };
   }
 
-  const [state, setstate] = useState({ articles:[],loading:false,page:1,});
-
-  const HandlePrevClick=async()=>{
+  handleprevClick = async () => {
     console.log("prev");
 
     let url = `https://newsapi.org/v2/top-headlines?country=${
-      props.country
-    }&category=${props.category}&apiKey=f512c567cfe342c1b6471700ea865ffd&page=${
-     state.page - 1
-    }&pageSize=${props.pageSize}`;
-    setstate({ loading: true });
+      this.props.country
+    }&category=${this.props.category}&apiKey=f512c567cfe342c1b6471700ea865ffd&page=${
+      this.state.page - 1
+    }&pageSize=${this.props.pageSize}`;
+    this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
-  
-    setstate({
+
+    this.setState({
      
-      page: state.page - 1,
+      page: this.state.page - 1,
       articles: parsedData.articles,
       loading: false,
     });
   };
 
-  const HandlenextClick = async () => {
+  handlenextClick = async () => {
     console.log("next");
    
       let url = `https://newsapi.org/v2/top-headlines?country=${
-        props.country
-      }&category=${props.category}&apiKey=f512c567cfe342c1b6471700ea865ffd&page=${
-        state.page + 1
-      }&pageSize=${props.pageSize}`;
-      setstate({ loading: true });
+        this.props.country
+      }&category=${this.props.category}&apiKey=f512c567cfe342c1b6471700ea865ffd&page=${
+        this.state.page + 1
+      }&pageSize=${this.props.pageSize}`;
+      this.setState({ loading: true });
       let data = await fetch(url);
       let parsedData = await data.json();
 
-      setstate({
+      this.setState({
       
-        page: state.page + 1,
+        page: this.state.page + 1,
         articles: parsedData.articles,
         loading: false,
       });
     
   };
 
-  
-   useEffect(() => {
-     
-    const fetchData=async() =>{
-      let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=f512c567cfe342c1b6471700ea865ffd&page=1&pageSize=${props.pageSize}`
-      setstate({ loading: true });
-      let data = await fetch(url);
-      let parsedData = await data.json();
-      setstate({
-        articles: parsedData.articles,
-        
-        TotalArticles: parsedData.totalResults,
-        loading: false,
-      });
-    }
-    fetchData().catch(console.error);
-    
-   },[1000])
-   
-  return (
-    <div>
-        <div className="container my-3 ">
+  async componentDidMount() {
+    //anything inside this function executes atlast.
+
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=f512c567cfe342c1b6471700ea865ffd&page=1&pageSize=${this.props.pageSize}`;
+    this.setState({ loading: true });
+    let data = await fetch(url);
+    let parsedData = await data.json();
+    this.setState({
+      articles: parsedData.articles,
+      TotalArticles: parsedData.totalResults,
+      loading: false,
+    });
+  }
+
+  render() {
+    return (
+      <div className="container my-3 ">
         <h2
           className="text-center my-4"
           style={{ border: "2px solid black", padding: "8px", margin: "3px" }}
         >
           <b>SPREAD-NEWS: Top Headlines</b>
         </h2>
-        <div style={{ top: "100px" }}>{state.loading && <Spinner />}</div>
+        <div style={{ top: "100px" }}>{this.state.loading && <Spinner />}</div>
 
         <div className="row">
-          {!state.loading &&
-            state.articles.map((element) => {
+          {!this.state.loading &&
+            this.state.articles.map((element) => {
               return (
                 <div
                   className="col-md-4 my-3"
                   style={{ height: "500px" }}
                   key={element.url}
                 >
-                  <Newsitem
+                  <NewsItem
                     //   key={element.url}
                     title={element ? element.title : ""}
                     description={element ? element.description : ""}
@@ -109,30 +117,31 @@ export const News = (props) => {
                 </div>
               );
             })}
-
         </div>
         <div className=" container d-flex justify-content-between">
           <button
-            disabled={state.page <= 1}
+            disabled={this.state.page <= 1}
             type="button"
             className="btn btn-dark"
-            onClick={HandlePrevClick}
+            onClick={this.handleprevClick}
           >
             &laquo; Prev
           </button>
           <button
             disabled={
-              state.page + 1 >
-              Math.ceil(state.TotalArticles / props.pageSize)
+              this.state.page + 1 >
+              Math.ceil(this.state.TotalArticles / this.props.pageSize)
             }
             type="button"
             className="btn btn-dark"
-            onClick={HandlenextClick}
+            onClick={this.handlenextClick}
           >
             Next &raquo;
           </button>
         </div>
       </div>
-    </div>
-  )
+    );
+  }
 }
+
+export default News;
