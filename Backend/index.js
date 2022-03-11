@@ -1,13 +1,21 @@
-// const express=require('express');
-// const cors=require('cors');
-// const ConnectToMongo=require('./db');
+const express = require("express");
+const cors = require("cors");
+const ConnectToMongo = require("./db");
 
-// ConnectToMongo();
+const app = express();
+const port = 5000;
 
-// const App=express();
-
-// App.use(cors());
-// App.use(express.json());
-
-
+//using middleware
+app.use(express.json())
 //Available Routes
+app.get("/", (req, res) => {
+  res.send("Hello World! i am a programmer.");
+});
+app.use("/api/auth",require('./routes/auth.js'));
+app.use("/api/notes",require('./routes/notes.js'));
+
+
+app.listen(port, () => {
+  console.log(`Example app listening on port http://localhost:${port}`);
+});
+ConnectToMongo();
