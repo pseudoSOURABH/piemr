@@ -18,6 +18,7 @@ import { C_History } from "./Components/NavbarComponent/Learnings/C/C_History/C_
 import { WhatisC } from "./Components/NavbarComponent/Learnings/C/WhatisC/WhatisC";
 import { Login } from "./Components/NavbarComponent/login/Login";
 import '../src/Components/NavbarComponent/News/News.css';
+import { Signup } from "./Components/NavbarComponent/Signup/Signup";
 
 function App() {
   // const window = getWindow();
@@ -61,6 +62,7 @@ function App() {
               <Route exact path="/learnings/C/C_History" element={<C_History/>} />
               <Route exact path="/learnings/C/What_is_C_language" element={<WhatisC/>} />
               <Route exact path="/login" element={<Login/>} />
+              <Route exact path="/signUp" element={<Signup/>} />
 
               
             </Routes>

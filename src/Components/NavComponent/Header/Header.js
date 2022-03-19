@@ -12,20 +12,20 @@ export const Header = () => {
         <div className="cred">
           <form className="credentialsbutton">
             <li>
-              <Link className="loginbutton" to="/login" role="button" >
+              <Link className="loginbutton" to="/login" role="button" type="submit"  >
                 login
               </Link>
             </li>
             <li>
-              <Link className="signupbutton" to="/" role="button">
+              <Link className="signupbutton" to="/signUp" role="button">
                 signUp
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link className="logoutbutton" to="/" role="button">
                 Logout
               </Link>
-            </li>
+            </li> */}
           </form>
         </div>
       </ul>
