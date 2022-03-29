@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-export const Signup = () => {
+export const Signup = (props) => {
   const [credentials, setcredentials] = useState({
     name: "",
     email: "",
@@ -32,8 +32,15 @@ export const Signup = () => {
     console.log(json);
 
     //storing credentials in local storage and redirecting user inside the application.
-    localStorage.setItem("token", json.authtoken);
-    Navigate("/");
+    if(json.success)
+    {
+      localStorage.setItem("token", json.authtoken);
+    Navigate("/Home");
+    props.showAlert('Account created successfully','success');
+    }
+    else{
+      props.showAlert('invalid credentials','danger');
+    }
   };
   return (
     <div className="container">
@@ -86,14 +93,14 @@ export const Signup = () => {
             onChange={onChange}
             className="form-control"
             name="cpassword"
-            id="password"
+            id="cpassword"
             minLength={8}
             placeholder="Password"
             required
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary" >
           Submit
         </button>
       </form>

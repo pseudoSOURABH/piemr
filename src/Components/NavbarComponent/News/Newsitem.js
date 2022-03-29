@@ -6,7 +6,7 @@ const NewsItem=(props)=>{
     let { title, description, imageurl, newsurl } = props;
     return (
       <div>
-        <div className="card" style={{ width: "18rem" }}>
+        <div className="card" style={{ width: "18rem"}}>
           <img
             src={
               imageurl
@@ -18,7 +18,7 @@ const NewsItem=(props)=>{
           />
           <div className="card-body">
             <h5 className="card-title">{title}...</h5>
-            <p className="card-text">{description}...</p>
+            <p className="card-text" >{description}...</p>
             <a
               rel="noreferrer"
               href={newsurl}

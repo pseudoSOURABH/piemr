@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 
-export const Login = () => {
+export const Login = (props) => {
   const Navigate=useNavigate();
 
  const [credentials, setcredentials] = useState({email:"",password:""});
@@ -32,11 +32,12 @@ export const Login = () => {
     if(json.success){
       //if success==true,then we will save the auth token for the sake of login and redirect user to 
       // use the application
-      Navigate('/');
-      localStorage.setItemI('token',json.authtoken);
+      Navigate('/Home');
+      localStorage.setItem('token',json.authtoken);
+      props.showAlert('   User loged-in successfully','success');
     }
     else{
-      alert('invalid credentials');
+      props.showAlert(`  Incorrect detail's format `,'danger');
     }
 
   }

@@ -56,8 +56,10 @@ export const Learnings = () => {
               </NavLink>
             </div>
             <div className="grid-item">
+              <NavLink to="/Data-Structure">
               <img src={ds} alt="not loaded" />
-              <p>Data-Structure</p>
+                <p>Data-Structure</p>
+              </NavLink>
             </div>
             <div className="grid-item">
               <img src={cld} alt="not loaded" />
