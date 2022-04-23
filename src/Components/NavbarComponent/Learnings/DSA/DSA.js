@@ -24,135 +24,134 @@ export const DSA = () => {
       <div className="alldsaitem">
         <div className="packet">
           <h2>introduction</h2>
-        
-          <div className="dsaitemrow">
-          <NavLink  to="/Home">
-          <div>
-              <img className="dsaitem" src={ds} />
-              <p>DATA STRUCTURE</p>
-            </div>
-          </NavLink>
-          <NavLink  to="/Data-structure/Algorithm">
-          <div>
-              <img className="dsaitem" src={algo} />
-              <p>ALGORITHM</p>
-            </div>
-          </NavLink>
 
-          <NavLink  to="/Data-Structure/Abstract-DataType">
-          <div>
-              <img className="dsaitem" src={abt} />
-              <p>ABSTRACT DATA-TYPE</p>
-            </div>
-          </NavLink>
-            
+          <div className="dsaitemrow">
+            <NavLink to="/DataStructure/introduction">
+              <div>
+                <img className="dsaitem" src={ds} />
+                <p>DATA STRUCTURE</p>
+              </div>
+            </NavLink>
+            <NavLink to="/Data-Structure/Algorithm">
+              <div>
+                <img className="dsaitem" src={algo} />
+                <p>ALGORITHM</p>
+              </div>
+            </NavLink>
+
+            <NavLink to="/Data-Structure/Abstract-DataType">
+              <div>
+                <img className="dsaitem" src={abt} />
+                <p>ABSTRACT DATA-TYPE</p>
+              </div>
+            </NavLink>
           </div>
         </div>
         <div div className="packet">
           <h2>Linear Data Structure</h2>
           <div className="dsaitemrow">
-          <NavLink  to="/Home">
-          <div>
-              <img className="dsaitem" src={arr} />
-              <p>ARRAY</p>
-            </div>
-          </NavLink>
-          <NavLink  to="/Home">
-          <div>
-              <img className="dsaitem" src={stck} />
-              <p>STACK</p>
-            </div>
-          </NavLink>
-          <NavLink  to="/Home">
-          <div>
-              <img className="dsaitem" src={q} />
-              <p>QUEUE</p>
-            </div>
-          </NavLink>
+            <NavLink to="/Home">
+              <div>
+                <img className="dsaitem" src={arr} />
+                <p>ARRAY</p>
+              </div>
+            </NavLink>
+            <NavLink to="/Home">
+              <div>
+                <img className="dsaitem" src={stck} />
+                <p>STACK</p>
+              </div>
+            </NavLink>
+            <NavLink to="/Home">
+              <div>
+                <img className="dsaitem" src={q} />
+                <p>QUEUE</p>
+              </div>
+            </NavLink>
           </div>
         </div>
         <div className="packet">
           <div className="dsaitemrow">
-          <NavLink  to="/Home">
-          <div>
-              <img className="dsaitem" src={cq} />
-              <p>CIRCULAR QUEUE</p>
-            </div>
-          </NavLink>
-          <NavLink  to="/Home">
-          <div>
-              <img className="dsaitem" src={ll1} />
-              <p>LINKED LIST</p>
-            </div>
-          </NavLink>
-          <NavLink  to="/Home">
-          <div>
-              <img className="dsaitem" src={ll2} />
-              <p>DOUBLY LINKED-LIST</p>
-            </div>
-          </NavLink>
+            <NavLink to="/Home">
+              <div>
+                <img className="dsaitem" src={cq} />
+                <p>CIRCULAR QUEUE</p>
+              </div>
+            </NavLink>
+            <NavLink to="/Home">
+              <div>
+                <img className="dsaitem" src={ll1} />
+                <p>LINKED LIST</p>
+              </div>
+            </NavLink>
+            <NavLink to="/Home">
+              <div>
+                <img className="dsaitem" src={ll2} />
+                <p>DOUBLY LINKED-LIST</p>
+              </div>
+            </NavLink>
           </div>
         </div>
         <div className="packet">
           <div className="dsaitemrow">
-          <NavLink  to="/Home">
-          <div>
-              <img className="dsaitem" src={ll3} />
-              <p>CIRCULAR LINKED-LIST</p>
-            </div>
-          </NavLink>
+            <NavLink to="/Home">
+              <div>
+                <img className="dsaitem" src={ll3} />
+                <p>CIRCULAR LINKED-LIST</p>
+              </div>
+            </NavLink>
           </div>
         </div>
         <div className="packet nonlnr">
           <h2>Non-Linear Data-Structure</h2>
           <div className="dsaitemrow ">
-          <NavLink  to="/Home">
-          <div>
-              <img className="dsaitem" src={tree} />
-              <p>TREE</p>
-            </div>
-          </NavLink>
-          <NavLink  to="/Home">
-          <div>
-              <img className="dsaitem" src={graph} />
-              <p>GRAPH</p>
-            </div>
-          </NavLink>
+            <NavLink to="/Home">
+              <div>
+                <img className="dsaitem" src={tree} />
+                <p>TREE</p>
+              </div>
+            </NavLink>
+            <NavLink to="/Home">
+              <div>
+                <img className="dsaitem" src={graph} />
+                <p>GRAPH</p>
+              </div>
+            </NavLink>
           </div>
         </div>
 
         <div className="packet">
           <h2>Types of Tree</h2>
           <div className="dsaitemrow">
-          <NavLink  to="/Home">
-          <div>
-              <img className="dsaitem" src={bnrtree} />
-              <p>BINARY TREE</p>
-            </div>
-          </NavLink>
-          <NavLink  to="/Home">
-          <div>
-              <img className="dsaitem" src={bnrstree} />
-              <p>BINARY SEARCH TREE</p>
-            </div>
-          </NavLink>
+            <NavLink to="/Home">
+              <div>
+                <img className="dsaitem" src={bnrtree} />
+                <p>BINARY TREE</p>
+              </div>
+            </NavLink>
+            <NavLink to="/Home">
+              <div>
+                <img className="dsaitem" src={bnrstree} />
+                <p>BINARY SEARCH TREE</p>
+              </div>
+            </NavLink>
 
-          <NavLink  to="/Home">
-          <div>
-              <img className="dsaitem" src={avl} />
-              <p>AVL TREE</p>
-            </div>
-          </NavLink>
+            <NavLink to="/Home">
+              <div>
+                <img className="dsaitem" src={avl} />
+                <p>AVL TREE</p>
+              </div>
+            </NavLink>
           </div>
         </div>
         <div className="packet">
           <div className="dsaitemrow">
-          <NavLink  to="/Home">
-          <div>
-              <img className="dsaitem" src={heap} />
-              <p>HEAP TREE</p>
-            </div>
-          </NavLink>
+            <NavLink to="/Home">
+              <div>
+                <img className="dsaitem" src={heap} />
+                <p>HEAP TREE</p>
+              </div>
+            </NavLink>
           </div>
         </div>
       </div>

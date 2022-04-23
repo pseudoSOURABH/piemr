@@ -23,9 +23,9 @@ import Alert from "./Components/Alert/Alert";
 import { Welcome } from "./Components/NavbarComponent/Welcome/Welcome";
 import { DSA } from "./Components/NavbarComponent/Learnings/DSA/DSA";
 
-import { Datastructure }  from "./Components/NavbarComponent/Learnings/DSA/introduction/Datastructure/Datastructure.js"
-import { Algo }  from "./Components/NavbarComponent/Learnings/DSA/introduction/Algo/Algo.js"
-import { Absdatatype }  from "./Components/NavbarComponent/Learnings/DSA/introduction/Absdatatype/Absdatatype.js"
+import { Datastructure } from "./Components/NavbarComponent/Learnings/DSA/introduction/Datastructure/Datastructure.js";
+import { Algo } from "./Components/NavbarComponent/Learnings/DSA/introduction/Algo/Algo.js";
+import { Absdatatype } from "./Components/NavbarComponent/Learnings/DSA/introduction/Absdatatype/Absdatatype.js";
 
 import { Circularlinkedlist } from "./Components/NavbarComponent/Learnings/DSA/lineards/Circularlinkedlist/Circularlinkedlist.js";
 import { CircularQ } from "./Components/NavbarComponent/Learnings/DSA/lineards/CircularQ/CircularQ.js";
@@ -58,6 +58,8 @@ import { Gentree } from "./Components/NavbarComponent/Learnings/DSA/Typesoftree/
 import { Heap } from "./Components/NavbarComponent/Learnings/DSA/Typesoftree/Heap/Heap.js";
 import { Redblacktree } from "./Components/NavbarComponent/Learnings/DSA/Typesoftree/Redblacktree/Redblacktree.js";
 import { SplayTree } from "./Components/NavbarComponent/Learnings/DSA/Typesoftree/SplayTree/SplayTree.js";
+
+import { AfterEffect } from "./Components/Style/AfterEffect/AfterEffect";
 
 function App() {
   const window = getWindow();
@@ -160,6 +162,11 @@ function App() {
                   path="/"
                   element={<Welcome showAlert={showAlert} />}
                 />
+                 <Route
+                  exact
+                  path="/"
+                  element={<AfterEffect showAlert={showAlert} />}
+                />
                 {!localStorage.getItem("token") && (
                   <Route
                     exact
@@ -185,33 +192,26 @@ function App() {
                 {!localStorage.getItem("token") && (
                   <Route
                     exact
-                    path="/Data-structure/introduction"
+                    path="/Data-Structure/introduction"
                     element={<Datastructure showAlert={showAlert} />}
                   />
                 )}
-                
 
-                
-
-                {!localStorage.getItem('token') &&
+                {!localStorage.getItem("token") && (
                   <Route
-                  exact
-                  path="/Data-structure/Algorithm"
-                  element={<Algo showAlert={showAlert} />}
-                />}
-                {!localStorage.getItem('token') &&
+                    exact
+                    path="/Data-Structure/Algorithm"
+                    element={<Algo showAlert={showAlert} />}
+                  />
+                )}
+                {!localStorage.getItem("token") && (
                   <Route
-                  exact
-                  path="/Data-Structure/Abstract-DataType"
-                  element={<Absdatatype showAlert={showAlert} />}
-                />}
-                {!localStorage.getItem('token') &&
-                  <Route
-                  exact
-                  path="/signUp"
-                  element={<Signup showAlert={showAlert} />}
-                />}
-                {!localStorage.getItem('token') &&
+                    exact
+                    path="/DataStructure/Abstract-DataType"
+                    element={<Absdatatype showAlert={showAlert} />}
+                  />
+                )}
+                {/* {!localStorage.getItem('token') &&
                   <Route
                   exact
                   path="/signUp"
@@ -289,6 +289,12 @@ function App() {
                   path="/signUp"
                   element={<Signup showAlert={showAlert} />}
                 />}
+                {!localStorage.getItem('token') &&
+                  <Route
+                  exact
+                  path="/signUp"
+                  element={<Signup showAlert={showAlert} />}
+                />} */}
               </Routes>
             </div>
             {window.location.href !== "http://localhost:3000/" &&
