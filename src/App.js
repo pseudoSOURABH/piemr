@@ -162,7 +162,7 @@ function App() {
                   path="/"
                   element={<Welcome showAlert={showAlert} />}
                 />
-                 <Route
+                <Route
                   exact
                   path="/"
                   element={<AfterEffect showAlert={showAlert} />}
